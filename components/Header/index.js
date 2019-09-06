@@ -7,6 +7,27 @@
 //    <h1>Lambda Times</h1>
 //    <span class="temp">98°</span>
 //  </div >
-// And add it to the DOM in the .header-container component
+// And add it to the DOM in the .headerContainer component
 
-function Header() {}
+function Header() {
+  const headerEl = document.createElement("div");
+  const dateEl = document.createElement("span");
+  const titleEl = document.createElement("h1");
+  const tempEl = document.createElement("span");
+
+  headerEl.classList.add("header");
+  dateEl.classList.add("date");
+  tempEl.classList.add("temp");
+
+  dateEl.textContent = "SMARCH 28, 2019";
+  titleEl.textContent = "Lambda Times";
+  tempEl.textContent = "98°";
+
+  headerEl.appendChild(dateEl);
+  headerEl.appendChild(titleEl);
+  headerEl.appendChild(tempEl);
+  return headerEl;
+}
+
+const hContainer = document.querySelector(".header-container");
+hContainer.appendChild(Header());
